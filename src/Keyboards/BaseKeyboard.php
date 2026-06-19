@@ -50,4 +50,26 @@ abstract class BaseKeyboard {
         return $this->totalButtonsCount > 100;
     }
 
+    public function setColIndex(int $colIndex)
+    {
+        $this->colIndex = $colIndex;
+    }
+
+    public function setRowIndex(int $rowIndex) {
+        $this->rowIndex = $rowIndex;
+    }
+
+    public function setMaxRows(int $maxRows)
+    {
+        $this->maxRows = $maxRows;
+    }
+
+    public function setMaxColumns(int $maxColumns) {
+        $this->maxColumns = $maxColumns;
+    }
+
+    public function setTotalButtonsCount(int $totalButtonsCount) {
+        $this->totalButtonsCount = $totalButtonsCount;
+    }
+
 }
