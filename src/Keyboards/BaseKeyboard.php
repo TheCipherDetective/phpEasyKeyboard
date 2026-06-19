@@ -10,6 +10,7 @@ abstract class BaseKeyboard {
     protected int $rowIndex = 0;  
     protected int $maxColumns = 4;    
     protected int $totalButtonsCount = 0;
+    protected int $maxButtonCount = 100;
 
     /**
      * Set max rows and columns count
@@ -47,7 +48,7 @@ abstract class BaseKeyboard {
     }
 
     public function isReachedTheMaxButtons(): bool {
-        return $this->totalButtonsCount > 100;
+        return $this->getTotalButtonsCount() > $this->getMaxButtonCount();
     }
 
     public function setColIndex(int $colIndex)
@@ -70,6 +71,19 @@ abstract class BaseKeyboard {
 
     public function setTotalButtonsCount(int $totalButtonsCount) {
         $this->totalButtonsCount = $totalButtonsCount;
+    }
+
+    public function getTotalButtonsCount() {
+        return $this->totalButtonsCount;
+    }
+
+    public function getMaxButtonCount()
+    {
+        return $this->maxButtonCount;
+    }
+
+    public function setMaxButtonCount(int $maxButtonCount){
+        $this->maxButtonCount = $maxButtonCount;
     }
 
 }
