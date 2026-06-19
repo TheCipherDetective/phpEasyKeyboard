@@ -3,7 +3,7 @@
 namespace TheCipherDetective\Telegram\Keyboards;
 
 
-abstract class Keyboard {
+abstract class BaseKeyboard {
     protected array $buttons = [];
     protected int $colIndex = 0;  
     protected int $maxRows = 8;   
