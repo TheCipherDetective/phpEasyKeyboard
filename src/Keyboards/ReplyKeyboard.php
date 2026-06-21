@@ -50,11 +50,39 @@ class ReplyKeyboard extends BaseKeyboard
         return $this;
     }
 
+    public function isSelective(): bool {
+        return $this->selective;
+    }
+
+    public function isOneTimeKeyboard(): bool {
+        return $this->one_time_keyboard;
+    }
+
+    public function getInputFieldPlaceholder(): string {
+        return $this->input_field_placeholder;
+    }
+
+    public function isPresstent(): bool
+    {
+        return $this->is_presstent;
+    }
+
+    public function resizeKeyboard() : bool {
+        return $this->resize_keyboard;
+    }
+
     public function createTextButton($text , string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
         $params = compact('text','style','icon_custom_emoji_id');
         $this->prepareData($params);
         return $this;
     }
 
+    public function createRequestUsersButton($text , array $request_users, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_users','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    
     
 }
