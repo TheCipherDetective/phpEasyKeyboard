@@ -52,7 +52,9 @@ class ReplyKeyboard extends BaseKeyboard
 
     public function createTextButton($text , string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
         $params = compact('text','style','icon_custom_emoji_id');
-        $this->addButton($params);
+        $this->prepareData($params);
         return $this;
     }
+
+    
 }
