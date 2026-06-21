@@ -100,6 +100,40 @@ class ReplyKeyboard extends BaseKeyboard
         return $this;
     }
 
-    
+    public function createRequestChatButton($text , array $request_chat, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_chat','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    public function createRequestManagetBotButton($text , array $request_managed_bot, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_managed_bot','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    public function createRequestContactButton($text , bool $request_contact, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_contact','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    public function createRequestLocationButton($text , bool $request_location, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_location','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    public function createRequestPollButton($text , array $request_poll, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','request_poll','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
+
+    public function createWebAppButton($text , array $web_app, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','web_app','style','icon_custom_emoji_id');
+        $this->prepareData($params);
+        return $this;
+    }
     
 }
