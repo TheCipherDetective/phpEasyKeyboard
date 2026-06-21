@@ -2,6 +2,7 @@
 
 namespace TheCipherDetective\Telegram\Keyboards;
 
+use TheCipherDetective\Telegram\Constants\ButtonStyle;
 
 class ReplyKeyboard extends BaseKeyboard
 {
@@ -49,5 +50,9 @@ class ReplyKeyboard extends BaseKeyboard
         return $this;
     }
 
-    
+    public function createTextButton($text , string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+        $params = compact('text','style','icon_custom_emoji_id');
+        $this->addButton($params);
+        return $this;
+    }
 }

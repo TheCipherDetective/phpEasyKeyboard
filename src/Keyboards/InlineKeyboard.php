@@ -8,27 +8,7 @@ use TheCipherDetective\Telegram\Constants\ButtonStyle;
 class InlineKeyboard extends BaseKeyboard
 {
 
-  public function addButton(array $buttonData)
-  {
-    if (!isset($buttonData['text'])) {
-      throw new \Exception('Button must have text');
-    }
-
-    if ($this->isTooManyButtons())
-      return $this;
-
-    if ($this->getColIndex() + 1 > $this->getMaxColumns())
-      $this->addRow();
-
-    if (($this->getRowIndex() + 1) < $this->getMaxRowsCount()) {
-      $colIndex = $this->getColIndex();
-      $this->buttons[$this->getRowIndex()][$this->getColIndex()] = $buttonData;
-      $this->setColIndex($colIndex + 1);
-    }
-    return $this;
-  }
-
-
+  
   public function prepareData(array $data)
   {
     $valid_data = array();
