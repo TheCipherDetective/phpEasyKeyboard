@@ -71,6 +71,23 @@ class ReplyKeyboard extends BaseKeyboard
         return $this->resize_keyboard;
     }
 
+    public function getKeyboard()
+    {
+        return [
+            'keyboard' => $this->getButtons(),
+            'is_persistent' => $this->isSelective(),
+            'resize_keyboard' => $this->resizeKeyboard(),
+            'one_time_keyboard' => $this->isOneTimeKeyboard(),
+            'input_field_placeholder' => $this->getInputFieldPlaceholder(),
+            'selective' => $this->isSelective(),
+        ];
+    }
+
+    public function getKeyboardAsJson()
+    {
+        return \json_encode($this->getKeyboard());
+    }
+
     public function createTextButton($text , string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
         $params = compact('text','style','icon_custom_emoji_id');
         $this->prepareData($params);
