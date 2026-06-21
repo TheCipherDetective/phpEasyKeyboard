@@ -105,9 +105,9 @@ class InlineKeyboard extends BaseKeyboard {
       }
 
       public function getInlineKeyboard() {
-          return json_encode( [
+          return [
             'inline_keyboard' => $this->getButtons()
-          ] );
+          ];
       }
 
       public function getInlineKeyboardAsJson() {
