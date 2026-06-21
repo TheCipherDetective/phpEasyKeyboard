@@ -2,14 +2,7 @@
 
 namespace TheCipherDetective\Telegram\Keyboards;
 
-class buttonStyle
-{
-  public const none = "";
-  public const blue = "primary";
-  public const green = "success";
-  public const red = "danger";
-
-}
+use TheCipherDetective\Telegram\Constants\ButtonStyle;
 
 
 class InlineKeyboard extends BaseKeyboard
@@ -46,7 +39,7 @@ class InlineKeyboard extends BaseKeyboard
     $this->addButton($valid_data);
   }
 
-  public function createCallbackButton($text, $callnack_data, string $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createCallbackButton($text, $callnack_data, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     if (\strlen($callnack_data) > 64) {
       throw new \Exception("BUTTON_DATA_INVALID : The length of Data to be sent in a callback query mube be 1-64 bytes");
@@ -56,63 +49,63 @@ class InlineKeyboard extends BaseKeyboard
     return $this;
   }
 
-  public function createUrlButton(string $text, string $url, string $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createUrlButton(string $text, string $url, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact("text", "url", "style", "icon_custom_emoji_id");
     $this->prepareData($params);
     return $this;
   }
 
-  public function createWebAppButton($text, $web_app, string $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createWebAppButton($text, $web_app, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'web_app', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatLoginUrlButton(string $text, array $login_url, string $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function creatLoginUrlButton(string $text, array $login_url, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'login_url', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQuery(string $text, string $switch_inline_query, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function creatSwitchInlineQuery(string $text, string $switch_inline_query, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQueryCurrentChat(string $text, string $switch_inline_query_current_chat, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function creatSwitchInlineQueryCurrentChat(string $text, string $switch_inline_query_current_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query_current_chat', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQueryChosenChat(string $text, string $switch_inline_query_chosen_chat, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function creatSwitchInlineQueryChosenChat(string $text, string $switch_inline_query_chosen_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query_chosen_chat', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function createCopyButton(string $text, string $copy_text, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createCopyButton(string $text, string $copy_text, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'copy_text', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function createCallbackGame(string $text, string $callback_game, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createCallbackGame(string $text, string $callback_game, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'callback_game', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function createPayButton(string $text, string $pay, $style = buttonStyle::none, $icon_custom_emoji_id = '')
+  public function createPayButton(string $text, string $pay, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'pay', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
