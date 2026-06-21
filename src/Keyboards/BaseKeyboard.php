@@ -118,5 +118,13 @@ abstract class BaseKeyboard {
         return $this;
     }
 
+    public function prepareData(array $data)
+    {
+        $valid_data = array_filter($data, function ($value) {
+            return $value !== null && $value !== "";
+        });
+        $this->addButton($valid_data);
+    }
+
 
 }
