@@ -9,16 +9,6 @@ class InlineKeyboard extends BaseKeyboard
 {
 
   
-  public function prepareData(array $data)
-  {
-    $valid_data = array();
-    foreach ($data as $key => $value) {
-      if ($value !== null or $value !== "")
-        $valid_data[$key] = $value;
-    }
-    $this->addButton($valid_data);
-  }
-
   public function createCallbackButton($text, $callnack_data, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     if (\strlen($callnack_data) > 64) {
