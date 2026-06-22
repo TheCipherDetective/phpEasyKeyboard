@@ -1,12 +1,12 @@
 <?php
 
-namespace TheCipherDetective\Telegram\Keyboards;
+namespace TheCipherDetective\PhpEasyKeyboard\Keyboards;
 
-use TheCipherDetective\Telegram\Constants\ButtonStyle;
+use TheCipherDetective\PhpEasyKeyboard\Constants\ButtonStyle;
 
 class ReplyKeyboard extends BaseKeyboard
 {
-    private $is_presstent = false;
+    private $is_persistent = false;
     private $resize_keyboard = false;
     private $one_time_keyboard = false;
     private $input_field_placeholder = false;
@@ -14,15 +14,15 @@ class ReplyKeyboard extends BaseKeyboard
     public function __construct(int $maxColumns = 4, int $maxRows = 8, $is_persistent = false, bool $resize_keyboard = false, bool $one_time_keyboard = false, string $input_field_placeholder = "", bool $selective = false)
     {
         parent::__construct($maxColumns, $maxRows);
-        $this->is_presstent = $is_persistent;
+        $this->is_persistent = $is_persistent;
         $this->resize_keyboard = $resize_keyboard;
         $this->one_time_keyboard = $one_time_keyboard;
         $this->input_field_placeholder = $input_field_placeholder;
         $this->selective = $selective;
     }
 
-    public function setIsPresstent(bool $is_presstent): self {
-        $this->is_presstent = $is_presstent;
+    public function isPersistent(bool $is_persistent): self {
+        $this->is_persistent = $is_persistent;
         return $this;
     }
 
@@ -62,9 +62,9 @@ class ReplyKeyboard extends BaseKeyboard
         return $this->input_field_placeholder;
     }
 
-    public function isPresstent(): bool
+    public function isPersistent(): bool
     {
-        return $this->is_presstent;
+        return $this->is_persistent;
     }
 
     public function resizeKeyboard() : bool {
@@ -75,7 +75,7 @@ class ReplyKeyboard extends BaseKeyboard
     {
         return [
             'keyboard' => $this->getButtons(),
-            'is_persistent' => $this->isSelective(),
+            'is_persistent' => $this->isPersistent(),
             'resize_keyboard' => $this->resizeKeyboard(),
             'one_time_keyboard' => $this->isOneTimeKeyboard(),
             'input_field_placeholder' => $this->getInputFieldPlaceholder(),
@@ -106,7 +106,7 @@ class ReplyKeyboard extends BaseKeyboard
         return $this;
     }
 
-    public function createRequestManagetBotButton($text , array $request_managed_bot, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
+    public function createRequestManagedBotButton($text , array $request_managed_bot, string $style = ButtonStyle::NONE , string $icon_custom_emoji_id = '' ) {
         $params = compact('text','request_managed_bot','style','icon_custom_emoji_id');
         $this->prepareData($params);
         return $this;

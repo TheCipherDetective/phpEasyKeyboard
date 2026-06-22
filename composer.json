@@ -3,7 +3,7 @@
     "description": "A simple library to create Telegram keyboards easy and fast.",
     "autoload": {
         "psr-4": {
-            "TheCipherDetective\\Telegram\\": "src/"
+            "TheCipherDetective\\PhpEasyKeyboard\\": "src/"
         }
     },
     "require": {

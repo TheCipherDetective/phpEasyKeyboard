@@ -1,6 +1,6 @@
 <?php
 
-namespace TheCipherDetective\Telegram\Keyboards;
+namespace TheCipherDetective\PhpEasyKeyboard\Keyboards;
 
 
 abstract class BaseKeyboard {

@@ -1,20 +1,20 @@
 <?php
 
-namespace TheCipherDetective\Telegram\Keyboards;
+namespace TheCipherDetective\PhpEasyKeyboard\Keyboards;
 
-use TheCipherDetective\Telegram\Constants\ButtonStyle;
+use TheCipherDetective\PhpEasyKeyboard\Constants\ButtonStyle;
 
 
 class InlineKeyboard extends BaseKeyboard
 {
 
   
-  public function createCallbackButton($text, $callnack_data, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
+  public function createCallbackButton($text, $callback_data, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
-    if (\strlen($callnack_data) > 64) {
-      throw new \Exception("BUTTON_DATA_INVALID : The length of Data to be sent in a callback query mube be 1-64 bytes");
+    if (\strlen($callback_data) > 64) {
+      throw new \Exception("BUTTON_DATA_INVALID : The length of Data to be sent in a callback query must be 1-64 bytes");
     }
-    $params = compact("text", "callnack_data", "style", "icon_custom_emoji_id");
+    $params = compact("text", "callback_data", "style", "icon_custom_emoji_id");
     $this->prepareData($params);
     return $this;
   }
@@ -33,28 +33,28 @@ class InlineKeyboard extends BaseKeyboard
     return $this;
   }
 
-  public function creatLoginUrlButton(string $text, array $login_url, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
+  public function createLoginUrlButton(string $text, array $login_url, string $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'login_url', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQuery(string $text, string $switch_inline_query, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
+  public function createSwitchInlineQuery(string $text, string $switch_inline_query, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQueryCurrentChat(string $text, string $switch_inline_query_current_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
+  public function createSwitchInlineQueryCurrentChat(string $text, string $switch_inline_query_current_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query_current_chat', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
     return $this;
   }
 
-  public function creatSwitchInlineQueryChosenChat(string $text, string $switch_inline_query_chosen_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
+  public function createSwitchInlineQueryChosenChat(string $text, string $switch_inline_query_chosen_chat, $style = ButtonStyle::NONE, $icon_custom_emoji_id = '')
   {
     $params = compact('text', 'switch_inline_query_chosen_chat', 'style', 'icon_custom_emoji_id');
     $this->prepareData($params);
