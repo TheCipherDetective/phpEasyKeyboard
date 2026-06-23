@@ -7,7 +7,7 @@ abstract class BaseKeyboard {
     protected array $buttons = [];
     protected int $colIndex = 0;  
     protected int $rowIndex = 0;  
-    protected int $maxRows = 8;   
+    protected int $maxRows = 4;   
     protected int $maxColumns = 4;    
     protected int $totalButtonsCount = 0;
     protected int $maxButtonCount = 100;
@@ -21,7 +21,7 @@ abstract class BaseKeyboard {
      * @param int $maxColumns
      * @param int $maxRows
      */
-    public function __construct(int $maxColumns = 4, int $maxRows = 8) {
+    public function __construct(int $maxColumns = 4, int $maxRows = 4) {
         $this->maxColumns = $maxColumns;
         $this->maxRows = $maxRows;
     }
