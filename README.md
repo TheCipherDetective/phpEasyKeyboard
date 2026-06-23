@@ -37,6 +37,14 @@ composer require thecipherdetective/phpeasykeyboard
 
 ---
 
+## 📌 Important Notes
+
+- Telegram limit: Maximum **100 buttons** per keyboard
+- Check out example folder to see examples
+---
+
+
+
 ## 🚀 Quick Start
 
 ### Inline Keyboard
@@ -113,14 +121,6 @@ echo $keyboard->getKeyboardAsJson();
 new InlineKeyboard(maxColumns: 3, maxRows: 10);
 new ReplyKeyboard(maxColumns: 4, maxRows: 8, is_persistent: true);
 ```
-
----
-
-## 📌 Important Notes
-
-- Telegram limit: Maximum **100 buttons** per keyboard
-- `callback_data` maximum length is **64 bytes**
-- Use `addRow()` to start a new row
 
 ---
 
