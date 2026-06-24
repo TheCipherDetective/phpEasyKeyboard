@@ -40,7 +40,7 @@ composer require thecipherdetective/phpeasykeyboard
 ## 📌 Important Notes
 
 - Telegram limit: Maximum **100 buttons** per keyboard
-- Check out example folder to see examples
+- Check out ![Examples](https://github.com/TheCipherDetective/phpEasyKeyboard/tree/main/examples)
 ---
 
 
