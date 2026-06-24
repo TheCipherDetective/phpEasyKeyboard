@@ -50,7 +50,7 @@ composer require thecipherdetective/phpeasykeyboard
 ### Inline Keyboard
 
 ```php
-use TheCipherDetective\Telegram\Keyboards\InlineKeyboard;
+use TheCipherDetective\PhpEasyKeyboard\Keyboards\InlineKeyboard;
 
 $keyboard = new InlineKeyboard();
 
@@ -67,7 +67,7 @@ echo $keyboard->getInlineKeyboardAsJson();
 ### Reply Keyboard
 
 ```php
-use TheCipherDetective\Telegram\Keyboards\ReplyKeyboard;
+use TheCipherDetective\PhpEasyKeyboard\Keyboards\ReplyKeyboard;
 
 $keyboard = new ReplyKeyboard(maxColumns: 3);
 
