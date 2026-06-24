@@ -1,6 +1,6 @@
 <?php
 
-namespace TheCipherDetective\Telegram\Constants;
+namespace TheCipherDetective\PhpEasyKeyboard\Constants;
 
 class ButtonStyle {
     public const NONE = "";
